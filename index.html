@@ -2,50 +2,507 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Portafolio JACB</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#05060a">
+    <meta name="description" content="Portafolio de Jose Armando Cuesta Buitrago, estudiante de Ingeniería Informática y desarrollador junior. Java, Python, soporte técnico y ciberseguridad. Disponibilidad inmediata.">
+    <title>Jose Armando Cuesta Buitrago — Desarrollador Junior</title>
 
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305060a'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='32' font-weight='700' fill='%234deeea'%3EJ%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}.skill-fill{transform:scaleX(1)!important}</style></noscript>
 </head>
 <body>
-    <section class="Texto"> 
-        <header>
-        <h1>JOSE ARMANDO CUESTA BUITRAGO</h1>
-        <h2>Estudiante de Ingeniería Informática | Desarrollador Junior</h2>
-        <p class="descripcion">
-            Apasionado por la programación, la ciberseguridad y la tecnología. Busco oportunidades para crecer en el sector TI.
-            Disponibilidad inmediata y motivación para aportar en proyectos de soporte técnico y desarrollo.
-        </p>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="top">
+        <nav class="nav container" aria-label="Navegación principal">
+            <a href="#inicio" class="brand" aria-label="Ir al inicio">
+                <span class="brand-mark">&lt;JACB/&gt;</span>
+                <span class="brand-dot" aria-hidden="true"></span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <a class="nav-cta" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+        </nav>
     </header>
 
-    <section class="proyectos">
-        <div class="tarjeta">
-            <img src="workinprogress.jpg" alt="Proyecto 1">
-            <h3>Proyecto 1</h3>
-            <p>Calculadora en Python con operaciones básicas y validación de entradas.</p>
+    <main id="main">
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="inicio">
+            <div class="hero-bg" aria-hidden="true"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow reveal" style="--delay:.05s">
+                        <span class="pulse" aria-hidden="true"></span>
+                        Disponible para nuevas oportunidades
+                    </p>
+
+                    <h1 class="hero-title reveal" style="--delay:.12s">
+                        <span class="line">Jose Armando</span>
+                        <span class="line gradient-text">Cuesta Buitrago</span>
+                    </h1>
+
+                    <p class="hero-role reveal" style="--delay:.2s">
+                        Desarrollador Junior <span class="sep">/</span>
+                        <span class="typed" id="typed">Soporte Técnico</span><span class="caret" aria-hidden="true">_</span>
+                    </p>
+
+                    <p class="hero-desc reveal" style="--delay:.28s">
+                        Estudiante de Ingeniería Informática apasionado por la programación,
+                        la ciberseguridad y la tecnología. Construyo soluciones con Java y Python
+                        mientras desarrollo mi camino en soporte técnico y redes.
+                    </p>
+
+                    <div class="hero-actions reveal" style="--delay:.36s">
+                        <a class="btn btn-primary" href="#proyectos">
+                            Ver proyectos <span aria-hidden="true">→</span>
+                        </a>
+                        <a class="btn btn-ghost" href="#contacto">
+                            Contactarme <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-social reveal" style="--delay:.44s">
+                        <span class="social-label">Encuéntrame en</span>
+                        <a href="https://github.com/JACB82" target="_blank" rel="noopener noreferrer" aria-label="GitHub de JACB82">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://wa.me/573213748302" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.35c0-4.52 3.68-8.2 8.2-8.2a8.2 8.2 0 0 1 8.2 8.2c0 4.52-3.68 8.21-8.16 8.21Zm4.5-6.14c-.25-.13-1.46-.72-1.68-.8-.23-.08-.39-.13-.56.13-.16.25-.64.8-.79.96-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23a7.5 7.5 0 0 1-1.38-1.72c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.12.16 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.15-1.17-.06-.11-.23-.17-.48-.3Z"/></svg>
+                            WhatsApp
+                        </a>
+                        <a href="mailto:josecuesta8234@gmail.com" aria-label="Enviar correo">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.2-8 5.3-8-5.3V6l8 5.3L20 6v2.2Z"/></svg>
+                            Email
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal" style="--delay:.3s">
+                    <div class="orbit" aria-hidden="true"></div>
+
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-title">jacb@portfolio: ~</span>
+                        </div>
+                        <div class="terminal-body">
+<pre><code><span class="c-muted"># bienvenido a mi terminal</span>
+<span class="c-green">$</span> whoami
+<span class="c-cyan">Jose Armando Cuesta Buitrago</span>
+
+<span class="c-green">$</span> cat focus.txt
+<span class="c-purple">01</span> Desarrollo de software
+<span class="c-purple">02</span> Soporte técnico y redes
+<span class="c-purple">03</span> Ciberseguridad
+
+<span class="c-green">$</span> status --availability
+<span class="c-green">✓</span> Disponible inmediatamente
+<span class="c-green">$</span> <span class="caret">▊</span></code></pre>
+                        </div>
+                    </div>
+
+                    <span class="float-chip chip-1"><i></i> Java</span>
+                    <span class="float-chip chip-2"><i></i> Python</span>
+                    <span class="float-chip chip-3"><i></i> Linux</span>
+                </div>
+            </div>
+
+            <a class="scroll-hint" href="#sobre-mi" aria-label="Desplazarse a la sección sobre mí">
+                <span class="scroll-line" aria-hidden="true"></span>
+                Scroll
+            </a>
+        </section>
+
+        <!-- ============ MARQUEE ============ -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>JAVA <b>✦</b> PYTHON <b>✦</b> HTML &amp; CSS <b>✦</b> GIT <b>✦</b> REDES <b>✦</b> CIBERSEGURIDAD <b>✦</b> SOPORTE TÉCNICO <b>✦</b>&nbsp;</span>
+                <span>JAVA <b>✦</b> PYTHON <b>✦</b> HTML &amp; CSS <b>✦</b> GIT <b>✦</b> REDES <b>✦</b> CIBERSEGURIDAD <b>✦</b> SOPORTE TÉCNICO <b>✦</b>&nbsp;</span>
+            </div>
         </div>
-        <div class="tarjeta">
-            <img src="workinprogress.jpg" alt="Proyecto 2">
-            <h3>Proyecto 2</h3>
-            <p>Sistema de facturación en Java para automatizar registros de ventas.</p>
+
+        <!-- ============ SOBRE MÍ ============ -->
+        <section class="section about" id="sobre-mi">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-index">01 /</span>
+                    <h2>Sobre mí</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-copy reveal" style="--delay:.1s">
+                        <p class="lead">
+                            Soy un desarrollador en formación que cree en el <span class="gradient-text">aprender haciendo</span>:
+                            cada línea de código, cada incidencia resuelta y cada proyecto terminado
+                            es una pieza más de mi crecimiento profesional.
+                        </p>
+                        <p>
+                            Estudio Ingeniería Informática y tengo bases sólidas en <strong>Java</strong> y
+                            <strong>Python</strong>, además de fundamentos de redes y ciberseguridad.
+                            Busco mi primera experiencia profesional en soporte técnico o desarrollo,
+                            aportando rapidez de aprendizaje, compromiso y ganas reales de sumar.
+                        </p>
+                        <blockquote>
+                            “No solo quiero empezar en el mundo laboral para sostenerme, sino para aprender
+                            y satisfacer la necesidad de seguir creciendo continuamente.”
+                        </blockquote>
+                        <a class="text-link" href="#contacto">Conozcámonos <span aria-hidden="true">→</span></a>
+                    </div>
+
+                    <div class="profile-card reveal" style="--delay:.2s">
+                        <div class="profile-top">
+                            <div class="monogram" aria-hidden="true">JACB</div>
+                            <div>
+                                <span class="profile-tag">// perfil</span>
+                                <h3>Jose Armando Cuesta Buitrago</h3>
+                                <p>Est. Ingeniería Informática</p>
+                            </div>
+                        </div>
+                        <div class="profile-status">
+                            <span class="pulse" aria-hidden="true"></span>
+                            Disponibilidad inmediata
+                        </div>
+                        <div class="stats">
+                            <div class="stat">
+                                <strong>02</strong>
+                                <span>Proyectos</span>
+                            </div>
+                            <div class="stat">
+                                <strong>03</strong>
+                                <span>Áreas de foco</span>
+                            </div>
+                            <div class="stat">
+                                <strong>∞</strong>
+                                <span>Ganas de aprender</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ STACK ============ -->
+        <section class="section stack" id="stack">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-index">02 /</span>
+                    <h2>Mi stack</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <p class="section-intro reveal">
+                    Herramientas y conocimientos que uso para construir, mantener y proteger.
+                    <span class="muted">(Los niveles son una autoevaluación.)</span>
+                </p>
+
+                <div class="skills-grid">
+                    <article class="skill-card reveal" style="--delay:.05s">
+                        <div class="skill-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="m8 3-6 9 6 9 2.2-1.5L5.9 12l4.3-7.5L8 3Zm8 0-2.2 1.5L18.1 12l-4.3 7.5L16 21l6-9-6-9Z"/></svg>
+                        </div>
+                        <span class="skill-kicker">Desarrollo</span>
+                        <h3>Construyo</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-meta"><span>Java</span><em>Sólido</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:80%"></span></div>
+                            </li>
+                            <li>
+                                <div class="skill-meta"><span>Python</span><em>Sólido</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:80%"></span></div>
+                            </li>
+                            <li>
+                                <div class="skill-meta"><span>HTML &amp; CSS</span><em>Creciendo</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:68%"></span></div>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card reveal" style="--delay:.15s">
+                        <div class="skill-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-1 19.95V19c0-1.1.9-2 2-2h1c1.1 0 2-.9 2-2s-.9-2-2-2h-2c-2.2 0-4-1.8-4-4a4 4 0 0 1 4-4h2v2h-2a2 2 0 0 0 0 4h2c2.2 0 4 1.8 4 4a4 4 0 0 1-4 4v1.95A10 10 0 0 0 12 2Z"/></svg>
+                        </div>
+                        <span class="skill-kicker">Infraestructura</span>
+                        <h3>Soporte &amp; redes</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-meta"><span>Soporte técnico</span><em>En foco</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:65%"></span></div>
+                            </li>
+                            <li>
+                                <div class="skill-meta"><span>Fundamentos de redes</span><em>Creciendo</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:55%"></span></div>
+                            </li>
+                            <li>
+                                <div class="skill-meta"><span>Git &amp; GitHub</span><em>Creciendo</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:58%"></span></div>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card reveal" style="--delay:.25s">
+                        <div class="skill-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4Zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8Z"/></svg>
+                        </div>
+                        <span class="skill-kicker">Seguridad</span>
+                        <h3>Protejo</h3>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-meta"><span>Ciberseguridad</span><em>Fundamentos</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:52%"></span></div>
+                            </li>
+                            <li>
+                                <div class="skill-meta"><span>Buenas prácticas</span><em>En foco</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:60%"></span></div>
+                            </li>
+                            <li>
+                                <div class="skill-meta"><span>Resolución de incidencias</span><em>Creciendo</em></div>
+                                <div class="bar"><span class="skill-fill" style="--level:62%"></span></div>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROYECTOS ============ -->
+        <section class="section projects" id="proyectos">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-index">03 /</span>
+                    <h2>Proyectos</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal" style="--delay:.05s">
+                        <div class="project-visual visual-python">
+                            <div class="code-window">
+                                <div class="code-dots"><i></i><i></i><i></i><span>calculadora.py</span></div>
+<pre><code><span class="c-purple">def</span> <span class="c-cyan">calcular</span>(a, b, op):
+    <span class="c-purple">if</span> op == <span class="c-amber">"+"</span>: <span class="c-purple">return</span> a + b
+    <span class="c-purple">if</span> op == <span class="c-amber">"-"</span>: <span class="c-purple">return</span> a - b
+    <span class="c-muted"># validación de entradas ✓</span>
+    <span class="c-purple">return</span> <span class="c-muted">None</span></code></pre>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-top">
+                                <span class="project-num">01</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <h3>Calculadora con validación</h3>
+                            <p>Operaciones básicas con control de entradas y manejo de errores para evitar fallos inesperados.</p>
+                            <div class="project-bottom">
+                                <ul class="tags"><li>Python</li><li>CLI</li><li>Validación</li></ul>
+                                <a href="https://github.com/JACB82" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de la calculadora en GitHub">Ver código <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" style="--delay:.15s">
+                        <div class="project-visual visual-java">
+                            <div class="code-window">
+                                <div class="code-dots"><i></i><i></i><i></i><span>Factura.java</span></div>
+<pre><code><span class="c-purple">public class</span> <span class="c-cyan">Factura</span> {
+  <span class="c-purple">private</span> List&lt;Item&gt; items;
+
+  <span class="c-purple">double</span> <span class="c-cyan">total</span>() {
+    <span class="c-purple">return</span> items.stream()
+      .mapToDouble(Item::precio).sum();
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-top">
+                                <span class="project-num">02</span>
+                                <span class="project-tag">Java</span>
+                            </div>
+                            <h3>Sistema de facturación</h3>
+                            <p>Automatización de registros de ventas y cálculo de totales para reducir trabajo manual y errores.</p>
+                            <div class="project-bottom">
+                                <ul class="tags"><li>Java</li><li>POO</li><li>Ventas</li></ul>
+                                <a href="https://github.com/JACB82" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio del sistema de facturación en GitHub">Ver código <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-next reveal" style="--delay:.25s">
+                        <div class="project-visual visual-next">
+                            <div class="next-mark" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 7.5L5.5 6.5 12 3.9l6.5 2.6L12 9.5ZM2 17l10 5 10-5-10-5-10 5Zm10 2.6-6.5-2.6L12 14.4l6.5 2.6L12 19.6ZM2 12l10 5 10-5-1.8-.9L12 15.2 3.8 11.1 2 12Z"/></svg>
+                            </div>
+                            <span class="next-label">EN CONSTRUCCIÓN</span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-top">
+                                <span class="project-num">03</span>
+                                <span class="project-tag">Próximamente</span>
+                            </div>
+                            <h3>El siguiente reto</h3>
+                            <p>Nuevo proyecto en camino. Si tienes una idea o un reto interesante para resolver, hablemos.</p>
+                            <div class="project-bottom">
+                                <ul class="tags"><li>Ideas</li><li>Colaboración</li></ul>
+                                <a href="#contacto">Proponer reto <span aria-hidden="true">→</span></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROCESS ============ -->
+        <section class="section process">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-index">04 /</span>
+                    <h2>Cómo trabajo</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="steps">
+                    <div class="step reveal" style="--delay:.05s">
+                        <span class="step-num">01</span>
+                        <h3>Entender</h3>
+                        <p>Leer el problema, hacer preguntas y definir qué significa “terminado” antes de escribir código.</p>
+                    </div>
+                    <div class="step reveal" style="--delay:.15s">
+                        <span class="step-num">02</span>
+                        <h3>Construir</h3>
+                        <p>Avanzar en iteraciones pequeñas, mantener el código legible y pedir feedback cuanto antes.</p>
+                    </div>
+                    <div class="step reveal" style="--delay:.25s">
+                        <span class="step-num">03</span>
+                        <h3>Mejorar</h3>
+                        <p>Probar, documentar y volver a revisar. Cada entrega debe dejar el proyecto mejor de lo que estaba.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACTO ============ -->
+        <section class="section contact" id="contacto">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-index">05 /</span>
+                    <h2>Contacto</h2>
+                    <span class="section-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-copy reveal" style="--delay:.1s">
+                        <span class="eyebrow"><span class="pulse" aria-hidden="true"></span> Abierto a oportunidades</span>
+                        <h2 class="contact-title">¿Construimos<br><span class="gradient-text">algo juntos?</span></h2>
+                        <p>
+                            Busco una oportunidad para aportar desde el primer día y seguir aprendiendo
+                            en un equipo real. Si necesitas alguien con ganas, disciplina y bases técnicas,
+                            escríbeme.
+                        </p>
+
+                        <ul class="contact-list">
+                            <li>
+                                <span class="contact-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.2-8 5.3-8-5.3V6l8 5.3L20 6v2.2Z"/></svg>
+                                </span>
+                                <div>
+                                    <span>Correo</span>
+                                    <button class="copy-trigger" id="copyEmail" type="button" title="Copiar correo">
+                                        josecuesta8234@gmail.com
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="contact-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1l-2.23 2.2Z"/></svg>
+                                </span>
+                                <div>
+                                    <span>Teléfono / WhatsApp</span>
+                                    <a href="tel:+573213748302">(+57) 321 374 8302</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="contact-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                                </span>
+                                <div>
+                                    <span>GitHub</span>
+                                    <a href="https://github.com/JACB82" target="_blank" rel="noopener noreferrer">github.com/JACB82</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="contact-form reveal" id="contactForm" style="--delay:.2s">
+                        <div class="form-head">
+                            <span class="form-dot"></span>
+                            <span>Escribir mensaje</span>
+                            <span class="form-brackets">&lt;/&gt;</span>
+                        </div>
+                        <div class="form-body">
+                            <div class="field">
+                                <label for="name">Tu nombre</label>
+                                <input id="name" name="name" type="text" placeholder="¿Cómo te llamas?" required autocomplete="name">
+                            </div>
+                            <div class="field">
+                                <label for="email">Tu correo</label>
+                                <input id="email" name="email" type="email" placeholder="nombre@empresa.com" required autocomplete="email">
+                            </div>
+                            <div class="field">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Cuéntame sobre la oportunidad o el proyecto..." required></textarea>
+                            </div>
+                            <button class="btn btn-primary btn-block" type="submit">
+                                Enviar mensaje <span aria-hidden="true">→</span>
+                            </button>
+                            <p class="form-note">Se abrirá tu aplicación de correo con el mensaje listo para enviar.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <span class="brand-mark">&lt;JACB/&gt;</span>
+                <p>Diseñado y desarrollado por Jose Armando Cuesta Buitrago · <span id="year">2026</span></p>
+            </div>
+            <p class="footer-note">Hecho con HTML, CSS y mucho <span aria-label="café">☕</span></p>
+            <a href="#top" class="back-top" aria-label="Volver al inicio">↑ Top</a>
         </div>
-    </section>
+    </footer>
 
-    <section class="yo">
-        <h2>Sobre mi</h2>
-        <p class="sobremi">Estudiante de Ingeniería Informática con bases sólidas en Java, Python y fundamentos de redes y ciberseguridad. Busco mi primera experiencia en soporte técnico o desarrollo, destacando por mi rápida capacidad de aprendizaje y compromiso. Disponibilidad inmediata y motivación para crecer en el sector tecnológico. Quiero poder empezar en este mundo laboral no solo para sostenimiento propio, sino tambien para aprender y satisfacer la necesidad de seguir creciendo continuamente</p>
-        <h2>contactos</h2>
-        <div class="linea-contacto">
-            <h3>Tel:</h3>
-            <p>(+57)3213748302</p>
-            <h3>Correo:</h3> 
-            <p>josecuesta8234@gmail.com</p>
-        </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-
-    </section>
-
-
-    </section>
+    <script src="script.js"></script>
 </body>
 </html>
