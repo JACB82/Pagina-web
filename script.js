@@ -8,33 +8,46 @@
     const $ = (selector, scope = document) => scope.querySelector(selector);
     const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
-    /* ---------- Navegación móvil ---------- */
-    const navToggle = $('#navToggle');
+    /* ---------- Navegación ----------
+       El menú de escritorio y el dock móvil comparten los mismos anchors.
+       Así el estado activo se mantiene sincronizado en ambos. */
     const navLinks = $('#navLinks');
-
+    const navToggle = $('#navToggle');
     const closeMenu = () => {
+        if (!navToggle || !navLinks) return;
         navToggle.setAttribute('aria-expanded', 'false');
         navToggle.setAttribute('aria-label', 'Abrir menú');
         navLinks.classList.remove('open');
     };
 
-    navToggle.addEventListener('click', () => {
-        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isOpen));
-        navToggle.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
-        navLinks.classList.toggle('open', !isOpen);
-    });
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!isOpen));
+            navToggle.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
+            navLinks.classList.toggle('open', !isOpen);
+        });
+        $$('a', navLinks).forEach((link) => link.addEventListener('click', closeMenu));
+    }
 
-    $$('a', navLinks).forEach((link) => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') closeMenu();
     });
 
-    /* ---------- Header al hacer scroll ---------- */
+    /* ---------- Header y progreso de lectura ---------- */
     const header = $('.site-header');
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+    const progress = $('#scrollProgress');
+    const onScroll = () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+        if (progress) {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const ratio = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+            progress.style.transform = `scaleX(${ratio})`;
+        }
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
 
     /* ---------- Revelado al entrar en viewport ---------- */
     const revealItems = $$('.reveal');
@@ -53,13 +66,19 @@
 
     /* ---------- Enlace activo del menú ---------- */
     const sections = $$('main section[id]');
-    const navAnchors = $$('.nav-links a');
+    const navAnchors = $$('.nav-links a, .dock a');
     if ('IntersectionObserver' in window) {
         const navObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
                 navAnchors.forEach((anchor) => {
-                    anchor.classList.toggle('active', anchor.getAttribute('href') === `#${entry.target.id}`);
+                    const isActive = anchor.getAttribute('href') === `#${entry.target.id}`;
+                    anchor.classList.toggle('active', isActive);
+                    if (isActive) {
+                        anchor.setAttribute('aria-current', 'location');
+                    } else {
+                        anchor.removeAttribute('aria-current');
+                    }
                 });
             });
         }, { rootMargin: '-45% 0px -50% 0px' });

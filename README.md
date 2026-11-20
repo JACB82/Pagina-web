@@ -18,7 +18,8 @@ También puedes abrir `index.html` directamente en el navegador.
 | --- | --- |
 | `index.html` | Estructura semántica, contenido y SVG inline (iconos y favicon). |
 | `styles.css` | Sistema de diseño: tokens, layout responsive, animaciones y estados. |
-| `script.js` | Menú móvil, scroll reveal, enlace activo, typing, copiar correo y formulario → `mailto:`. |
+| `script.js` | Dock activo, scroll reveal, enlace activo, typing, copiar correo y formulario → `mailto:`. |
+| `GUIA.md` | Explicación didáctica de las técnicas móviles: dock, carrusel, `clamp()`, `scroll-snap`, safe areas y más. |
 | `Fondo.jpg` / `workinprogress.jpg` | Recursos visuales originales (se usan con baja opacidad como textura). |
 
 ## Personalizar antes de compartir
@@ -40,10 +41,13 @@ El archivo `.nojekyll` evita que GitHub procese el sitio con Jekyll, para que lo
 
 ## Decisiones de diseño
 
-- **Dark cinematográfico:** fondo near-black, gradientes cian/violeta, rejillas sutiles, grano y halo que sigue el cursor.
+- **Dark cinematográfico:** fondo near-black, gradientes cian/violeta, rejillas sutiles, grano, aurora animada y halo que sigue el cursor.
+- **Móvil con esencia:** dock inferior tipo app, sello holográfico JACB, proyectos en carrusel con `scroll-snap`, safe areas y estados táctiles.
 - **Jerarquía clara:** hero con terminal, sobre mí, stack, proyectos, proceso y contacto con CTA.
 - **Accesibilidad:** navegación por teclado, `skip-link`, `aria-*` en controles, foco visible y soporte para `prefers-reduced-motion`.
 - **Rendimiento:** SVG inline, fuentes cargadas desde Google Fonts con `preconnect`, animaciones CSS y un único archivo JS pequeño.
-- **Responsive:** breakpoints a 1024, 860 y 620 px.
+- **Responsive:** breakpoints a 1024, 860, 620 y 380 px.
+
+> ¿Quieres entender cómo está hecho el comportamiento móvil? Lee [`GUIA.md`](GUIA.md).
 
 ¿Ideas o una oportunidad? Escríbeme a **josecuesta8234@gmail.com**.

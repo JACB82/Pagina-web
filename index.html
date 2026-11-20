@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#05060a">
     <meta name="description" content="Portafolio de Jose Armando Cuesta Buitrago, estudiante de Ingeniería Informática y desarrollador junior. Java, Python, soporte técnico y ciberseguridad. Disponibilidad inmediata.">
     <title>Jose Armando Cuesta Buitrago — Desarrollador Junior</title>
@@ -11,7 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     <noscript><style>.reveal{opacity:1!important;transform:none!important}.skill-fill{transform:scaleX(1)!important}</style></noscript>
@@ -19,6 +19,7 @@
 <body>
     <div class="noise" aria-hidden="true"></div>
     <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <a class="skip-link" href="#main">Saltar al contenido</a>
 
     <!-- ============ HEADER ============ -->
@@ -28,10 +29,6 @@
                 <span class="brand-mark">&lt;JACB/&gt;</span>
                 <span class="brand-dot" aria-hidden="true"></span>
             </a>
-
-            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
-                <span></span><span></span><span></span>
-            </button>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio" class="active">Inicio</a></li>
@@ -48,7 +45,10 @@
     <main id="main">
         <!-- ============ HERO ============ -->
         <section class="hero" id="inicio">
-            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-bg" aria-hidden="true">
+                <span class="aurora aurora-a"></span>
+                <span class="aurora aurora-b"></span>
+            </div>
 
             <div class="container hero-grid">
                 <div class="hero-copy">
@@ -67,7 +67,9 @@
                         <span class="typed" id="typed">Soporte Técnico</span><span class="caret" aria-hidden="true">_</span>
                     </p>
 
-                    <p class="hero-desc reveal" style="--delay:.28s">
+                    <p class="hero-tagline reveal" style="--delay:.24s">// código con propósito · aprendizaje sin pausa</p>
+
+                    <p class="hero-desc reveal" style="--delay:.3s">
                         Estudiante de Ingeniería Informática apasionado por la programación,
                         la ciberseguridad y la tecnología. Construyo soluciones con Java y Python
                         mientras desarrollo mi camino en soporte técnico y redes.
@@ -101,6 +103,12 @@
 
                 <div class="hero-visual reveal" style="--delay:.3s">
                     <div class="orbit" aria-hidden="true"></div>
+
+                    <div class="holo-badge" aria-hidden="true">
+                        <span class="holo-ring"></span>
+                        <span class="holo-core">JACB</span>
+                        <span class="holo-caption">// OPEN TO WORK</span>
+                    </div>
 
                     <div class="terminal">
                         <div class="terminal-bar">
@@ -201,6 +209,21 @@
                                 <span>Ganas de aprender</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="now-strip reveal" style="--delay:.15s">
+                    <div class="now-item">
+                        <span>// ahora</span>
+                        <strong>Aprendiendo Ingeniería Informática</strong>
+                    </div>
+                    <div class="now-item">
+                        <span>// construyendo</span>
+                        <strong>Este portafolio, en público</strong>
+                    </div>
+                    <div class="now-item">
+                        <span>// buscando</span>
+                        <strong>Mi primera oportunidad TI</strong>
                     </div>
                 </div>
             </div>
@@ -374,6 +397,8 @@
                         </div>
                     </article>
                 </div>
+
+                <p class="swipe-hint" aria-hidden="true">Desliza para explorar <span>→</span></p>
             </div>
         </section>
 
@@ -492,14 +517,39 @@
     <!-- ============ FOOTER ============ -->
     <footer class="site-footer">
         <div class="container footer-inner">
-            <div>
+            <div class="footer-brand">
                 <span class="brand-mark">&lt;JACB/&gt;</span>
                 <p>Diseñado y desarrollado por Jose Armando Cuesta Buitrago · <span id="year">2026</span></p>
             </div>
+            <p class="footer-signature" aria-hidden="true">Jose A. Cuesta</p>
             <p class="footer-note">Hecho con HTML, CSS y mucho <span aria-label="café">☕</span></p>
             <a href="#top" class="back-top" aria-label="Volver al inicio">↑ Top</a>
         </div>
     </footer>
+
+    <!-- ============ DOCK MÓVIL ============ -->
+    <nav class="dock" aria-label="Navegación rápida">
+        <a href="#inicio" class="active" aria-label="Inicio">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3L12 3Z"/></svg>
+            <span>Inicio</span>
+        </a>
+        <a href="#sobre-mi" aria-label="Sobre mí">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0 2c-4.42 0-8 2.24-8 5v2h16v-2c0-2.76-3.58-5-8-5Z"/></svg>
+            <span>Sobre mí</span>
+        </a>
+        <a href="#stack" aria-label="Stack">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5Zm0 12.6L5.4 11.3 2 13l10 5 10-5-3.4-1.7-6.6 3.3Z"/></svg>
+            <span>Stack</span>
+        </a>
+        <a href="#proyectos" aria-label="Proyectos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h6l2 2h10v12H3V5Zm2 4v8h14V9H5Z"/></svg>
+            <span>Proyectos</span>
+        </a>
+        <a href="#contacto" aria-label="Contacto">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.2-8 5.3-8-5.3V6l8 5.3L20 6v2.2Z"/></svg>
+            <span>Contacto</span>
+        </a>
+    </nav>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
